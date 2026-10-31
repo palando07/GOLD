@@ -8,8 +8,3 @@ export function journeyMs(route: Route): number {
   return (route.days * DAY_MS) / scale;
 }
 
-export function progress(sentAt: string, arrivesAt: string, now = Date.now()): number {
-  const start = new Date(sentAt).getTime();
-  const end = new Date(arrivesAt).getTime();
-  return Math.min(1, Math.max(0, (now - start) / (end - start)));
-}
